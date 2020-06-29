@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <title>Doctor's Login</title>
+  </head>
+  <body>
+    <div id="form_wrapper">
+      <form action="/validate-login" method="POST">
+        <div id="form_right">
+          <h1>Doctor's Login</h1>
+          <div class="input_container">
+            <i class="fa fa-user icon"></i>
+            <input
+              placeholder="Email"
+              type="email"
+              name="Email"
+              id="field_email"
+              class="input_field"
+            />
+          </div>
+          <div class="input_container">
+            <i class="fa fa-key icon"></i>
+            <input
+              placeholder="Password"
+              type="password"
+              name="Password"
+              id="field_password"
+              class="input_field"
+            />
+          </div>
+
+          <button class="myButton2">Login</button>
+          <span
+            >Forgot <a href="/forgot-password"> Username / Password ?</a></span
+          >
+          <div class="socials">
+            <ul>
+              <li><img src="/static/images/face.png" /></li>
+              <li><img src="/static/images/twitter.png" /></li>
+              <li><img src="/static/images/google.jpg" /></li>
+            </ul>
+          </div>
+          <span id="create_account">
+            <a href="/register">Click here to Create your account </a>
+          </span>
+        </div>
+      </form>
+      {% if error %}
+      <h3>{{error}}</h3>
+      {% endif %}
+    </div>
+  </body>
+</html>

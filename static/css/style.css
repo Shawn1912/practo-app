@@ -1,0 +1,237 @@
+:root {
+  --form_bg: #ffffff;
+  --input_bg: #e5e5e5;
+  --input_hover: #eaeaea;
+  --submit_bg: #201e4d;
+  --submit_hover: #201e4d;
+  --icon_color: #6b6b6b;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-color: #201e4d;
+  display: flex;
+}
+
+#form_wrapper {
+  width: 1000px;
+  height: 700px;
+
+  margin: auto;
+  background-color: var(--form_bg);
+  border-radius: 50px;
+  /* make it a grid container*/
+  
+  padding: 5vh 15px;
+}
+
+
+#form_left {
+  /* center the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#form_left img {
+  width: 400px;
+  height: 400px;
+}
+
+#form_right {
+  display: grid;
+
+  /* single column layout */
+  grid-template-columns: 1fr;
+  /* have some gap in between elements*/
+  grid-gap: 20px;
+  padding: 10% 20%;
+}
+.input_container {
+  background-color: var(--input_bg);
+
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.input_container:hover {
+  background-color: var(--input_hover);
+}
+
+.input_container,
+#input_submit {
+  height: 40px;
+
+  border-radius: 10px;
+  width: 100%;
+}
+
+.input_field {
+  /* customize the input tag with lighter font and some padding*/
+  color: var(--icon_color);
+  background-color: inherit;
+  width: 100%;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding-left: 30px;
+}
+
+.input_field:hover,
+.input_field:focus {
+  /* remove the outline */
+  outline: none;
+}
+
+#input_submit {
+  /* submit button has a different color and different padding */
+  background-color: var(--submit_bg);
+  padding-left: 0;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+#input_submit:hover {
+  background-color: var(--submit_hover);
+  /* simple color transition on hover */
+  transition: background-color, 1s;
+  cursor: pointer;
+}
+
+h1,
+span {
+  text-align: center;
+}
+
+/* shift it a bit lower */
+#create_account {
+  display: block;
+  position: relative;
+  top: 30px;
+}
+
+a {
+  /* remove default underline */
+  text-decoration: none;
+  color: var(--submit_bg);
+  font-weight: bold;
+}
+
+a:hover {
+  color: gray;
+}
+
+i {
+  color: var(--icon_color);
+}
+
+@media screen and (max-width: 768px) {
+  /* make the layout  a single column and add some margin to the wrapper */
+  #form_wrapper {
+    grid-template-columns: 1fr;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  /* on small screen we don't display the image */
+  #form_left {
+    display: none;
+  }
+}
+
+.box select {
+  padding: 10px;
+  width: 100%;
+  height: 40px;
+  background: #eaeaea;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5);
+  -webkit-appearance: button;
+}
+
+.opt {
+  font-size: medium;
+  background-color: white;
+}
+
+.socials {
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.socials ul {
+  list-style: none;
+}
+
+.socials ul li {
+  display: inline-block;
+  cursor: pointer;
+  margin: 15px 15px;
+}
+.socials img {
+  width: 50px;
+  height: 50px;
+}
+
+
+.myButton {
+	box-shadow: 0px 10px 14px -7px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:4px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	text-align: center;
+	font-size:25px;
+	font-weight:bold;
+	padding:12px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.myButton2 {
+	box-shadow: 0px 10px 14px -7px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:4px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	text-align: center;
+	font-size:25px;
+	font-weight:bold;
+	padding:12px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+	height:60px;
+	width:100%;
+}
+.myButton2:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}

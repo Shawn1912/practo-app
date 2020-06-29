@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Profile</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <style>
+      #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #fff;
+        color: #333;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+      }
+
+      #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 600s 600s;
+        animation: fadein 600s, fadeout 600s 600s;
+      }
+
+      #create_account {
+        display: block;
+        position: relative;
+        top: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="title">
+        Create New Profile
+      </div>
+      <form
+        action="/validate-register"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <label>UserName</label>
+        <input type="text" class="input" name="Username" />
+
+        <label>Email Address</label>
+        <input type="text" class="input" name="Email" />
+
+        <label>Phone Number</label>
+        <input type="text" class="input" name="Number" />
+
+        <label>city</label>
+        <div class="custom_select">
+          <select name="City">
+            <option value="">Select</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Thane">Thane</option>
+            <option value="Pune">Pune</option>
+            <option value="Lucknow">Lucknow</option>
+            <option value="Patna">Patna</option>
+            <option value="Dehradun">Dehradun</option>
+            <option value="Hyderabad">Hyderabad</option>
+          </select>
+        </div>
+
+        <label>Gender</label>
+        <div class="custom_select">
+          <select name="Gender">
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+
+        <label>College Name</label>
+        <input type="text" class="input" name="College" />
+        <label>Education Qualification</label>
+        <div class="custom_select">
+          <select name="Qualify">
+            <option value="">Select</option>
+            <option value="MBBS">MBBS</option>
+            <option value="MD">MD</option>
+            <option value="BDS">BDS</option>
+            <option value="BAMS">BAMS</option>
+            <option value="BUMS">BUMS</option>
+            <option value="BHMS">BHMS</option>
+            <option value="BYNS">BYNS</option>
+            <option value="B.V.Sc">B.V.Sc</option>
+            <option value="AH">AH</option>
+          </select>
+        </div>
+        <label>Specialty</label>
+        <div class="custom_select">
+          <select name="Specialty">
+            <option value="">Select</option>
+            <option value="Anesthesiologist">Anesthesiologist</option>
+            <option value="Cardiologist">Cardiologist</option>
+            <option value="Dentist">Dentist</option>
+            <option value="Endocrinologist">Endocrinologist</option>
+            <option value="Oncologist">Oncologist</option>
+            <option value="Neurologist">Neurologist</option>
+            <option value="Urologist">Urologist</option>
+            <option value="Surgical Gastroenterology"
+              >Surgical Gastroenterology</option
+            >v
+            <option value="Medical Gastroenterology"
+              >Medical Gastroenterology</option
+            >
+            <option value="ENT Specialist">ENT Specialist</option>
+          </select>
+        </div>
+        <label>Years Of Experience</label>
+        <input type="text" class="input" name="Experience" />
+        <label>Upload Certificate</label><br /><br />
+        <div class="form-field-input">
+          <input
+            type="file"
+            class="file-input"
+            name="file_image"
+            id="file_image"
+          />
+        </div>
+        <br /><br />
+        <label>Password</label>
+        <input type="password" class="input" name="Password" />
+
+        <label>Confirm Password</label>
+        <input type="password" class="input" name="ConPassword" />
+
+        <input type="submit" id="sub_btn" value="Register" class="btn" />
+        <div class="form_wrapper">
+          <span id="create_account">
+            <a href="/login">Click here to Go Back to Login </a>
+          </span>
+        </div>
+      </form>
+      {% if error %}
+      <h3>{{error}}</h3>
+      {% endif %}
+    </div>
+    <div id="snackbar">User Created Successfully !!!</div>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function () {
+          x.className = x.className.replace("show", "");
+        }, 300000000);
+      }
+    </script>
+  </body>
+</html>
